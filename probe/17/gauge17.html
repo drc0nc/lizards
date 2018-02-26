@@ -1,0 +1,54 @@
+<!-------------- la fonction JavaScript qui dessine les jauges --------------->
+ 
+<script>
+RGraph.CSV('probe17.csv', function (csv)        //on récupère le fichier sonde.csv
+{
+    // on enregistre les lignes du fichier sonde.csv dans des variables
+    var row1 = csv.getRow(1, 0);    
+    var row2 = csv.getRow(1, 1);
+
+    
+    // on définit la première jauge
+    var gauge1 = new RGraph.Gauge({
+        id: 'cvs3',           // l'ID du canvas
+        min: 0,               // valeur min
+        max: 100,             // valeur max
+        value: row1[0],       // nos datas
+        options: {
+        titleTop: 'humidity',  // le titre du haut
+        titleBottom: '%',       // le titre du bas
+        colorsRanges: [[0, 25, '#DC3912'], [25, 35,'#FF9900'], [35, 60, '#00FF00'], [60, 70, '#FF9900'], [70,100,'#DC3912']] ,
+        }                        // ci dessus on personnalise les zones rouge verte orange .
+    }).draw(); // on la dessine
+
+    // on définit la deuxième jauge
+    var gauge2 = new RGraph.Gauge({
+        id: 'cvs4',             // l'ID du canvas
+        min: 50,                 // valeur min
+        max: 100,                // valeur max
+        value: row2[0],         // nos datas
+        options: {
+        titleTop: 'temperature',   // le titre du haut
+        titleBottom: '°F',         // le titre du bas
+        colorsRanges: [[0, 10, '#DC3912'], [10, 15,'#FF9900'], [15, 27, '#00FF00'], [27, 32, '#FF9900'], [32,60,'#DC3912']] ,
+        }                     // ci dessus on personnalise les zones rouge verte orange .
+    }).draw();  // on la dessine
+    
+});
+</script>
+
+<!-------------- la partie HTML où l'on va dessiner les jauges --------------->
+
+    <h1>Probe 17 Gauges</h1>      <!-- titre -->  
+           
+    <div id="canvas">               <!-- la div qui contiendra les jauges -->
+        
+        <canvas id="cvs3" width="250" height="250" >         <!-- 1ere jauge  -->
+            [No canvas support]
+        </canvas>
+
+        <canvas id="cvs4" width="250" height="250" >         <!-- 2eme jauge  -->
+            [No canvas support]
+        </canvas>
+
+    </div>
