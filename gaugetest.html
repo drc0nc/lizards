@@ -1,0 +1,149 @@
+<!-------------- the JavaScript function that draws the gauges --------------->
+ 
+<script>
+RGraph.CSV('probe.csv', function (csv)        //we get the file probe.csv
+{
+    // we save the lines of the file probe.csv in variables
+    var row1 = csv.getRow(1, 0);    
+    var row2 = csv.getRow(1, 1);
+
+    
+    // we define the first gauge
+    var gauge1 = new RGraph.Gauge({
+        id: 'cvs1',           // 
+        min: 0,               //  min
+        max: 100,             //  max
+        value: row1[0],       // on dates
+        options: {
+        titleTop: 'humidity',  // the title of the top
+        titleBottom: '%',       // the bottom title
+        colorsRanges: [[0, 25, '#DC3912'], [25, 35,'#FF9900'], [35, 60, '#00FF00'], [60, 70, '#FF9900'], [70,100,'#DC3912']] ,
+        }                        // above we customize the orange green red areas .
+    }).draw(); // we draw it
+
+    // we define the second gauge 
+    var gauge2 = new RGraph.Gauge({
+        id: 'cvs2',             // 
+        min: 50,                 //  min
+        max: 100,                //  max
+        value: row2[0],         // on dates
+        options: {
+        titleTop: 'temperature',   // the title of the top
+        titleBottom: '°F',         // the bottom title
+        colorsRanges: [[0, 10, '#DC3912'], [10, 15,'#FF9900'], [15, 27, '#00FF00'], [27, 32, '#FF9900'], [32,60,'#DC3912']] ,
+        }                     // above we customize the orange green red areas .
+    }).draw();  // we draw it
+    
+});
+RGraph.CSV('probe17.csv', function (csv)        //we get the file probe.csv
+{
+    // we save the lines of the file probe.csv in variables
+    var row1 = csv.getRow(1, 0);    
+    var row2 = csv.getRow(1, 1);
+
+    
+    // we define the first gauge
+    var gauge3 = new RGraph.Gauge({
+        id: 'cvs3',           // 
+        min: 0,               //  min
+        max: 100,             //  max
+        value: row1[0],       // on dates
+        options: {
+        titleTop: 'humidity',  // the title of the top
+        titleBottom: '%',       // the bottom title
+        colorsRanges: [[0, 25, '#DC3912'], [25, 35,'#FF9900'], [35, 60, '#00FF00'], [60, 70, '#FF9900'], [70,100,'#DC3912']] ,
+        }                        // above we customize the orange green red areas .
+    }).draw(); // we draw it
+
+    // we define the second gauge 
+    var gauge4 = new RGraph.Gauge({
+        id: 'cvs4',             // 
+        min: 50,                 //  min
+        max: 100,                //  max
+        value: row2[0],         // on dates
+        options: {
+        titleTop: 'temperature',   // the title of the top
+        titleBottom: '°F',         // the bottom title
+        colorsRanges: [[0, 10, '#DC3912'], [10, 15,'#FF9900'], [15, 27, '#00FF00'], [27, 32, '#FF9900'], [32,60,'#DC3912']] ,
+        }                     // above we customize the orange green red areas .
+    }).draw();  // we draw it
+    
+});
+RGraph.CSV('probe27.csv', function (csv)        //we get the file probe.csv
+{
+    // we save the lines of the file probe.csv in variables
+    var row1 = csv.getRow(1, 0);    
+    var row2 = csv.getRow(1, 1);
+
+    
+    // we define the first gauge
+    var gauge5 = new RGraph.Gauge({
+        id: 'cvs5',           // 
+        min: 0,               //  min
+        max: 100,             //  max
+        value: row1[0],       // on dates
+        options: {
+        titleTop: 'humidity',  // the title of the top
+        titleBottom: '%',       // the bottom title
+        colorsRanges: [[0, 25, '#DC3912'], [25, 35,'#FF9900'], [35, 60, '#00FF00'], [60, 70, '#FF9900'], [70,100,'#DC3912']] ,
+        }                        // above we customize the orange green red areas .
+    }).draw(); // we draw it
+
+    // we define the second gauge 
+    var gauge6 = new RGraph.Gauge({
+        id: 'cvs6',             // 
+        min: 50,                 //  min
+        max: 100,                //  max
+        value: row2[0],         // on dates
+        options: {
+        titleTop: 'temperature',   // the title of the top
+        titleBottom: '°F',         // the bottom title
+        colorsRanges: [[0, 10, '#DC3912'], [10, 15,'#FF9900'], [15, 27, '#00FF00'], [27, 32, '#FF9900'], [32,60,'#DC3912']] ,
+        }                     // above we customize the orange green red areas .
+    }).draw();  // we draw it
+    
+});
+</script>
+
+<!-------------- the HTML part where we will draw the gauges --------------->
+
+    <h1>PROBE 22</h1>      <!-- title -->  
+           
+    <div id="canvas">               <!-- the div that will contain the gauges -->
+        
+        <canvas id="cvs1" width="250" height="250" >         <!-- 1st gauge  -->
+            [No canvas support]
+        </canvas>
+
+        <canvas id="cvs2" width="250" height="250" >         <!-- 2ng gauge  -->
+            [No canvas support]
+        </canvas>
+
+    </div>
+	    <h1>PROBE 17</h1>      <!-- title -->  
+           
+    <div id="canvas">               <!-- the div that will contain the gauges -->
+        
+        <canvas id="cvs3" width="250" height="250" >         <!-- 1st gauge  -->
+            [No canvas support]
+        </canvas>
+
+        <canvas id="cvs4" width="250" height="250" >         <!-- 2ng gauge  -->
+            [No canvas support]
+        </canvas>
+
+    </div>
+    <h1>PROBE 27</h1>      <!-- title -->  
+           
+    <div id="canvas">               <!-- the div that will contain the gauges -->
+        
+        <canvas id="cvs5" width="250" height="250" >         <!-- 1st gauge  -->
+            [No canvas support]
+        </canvas>
+
+        <canvas id="cvs6" width="250" height="250" >         <!-- 2ng gauge  -->
+            [No canvas support]
+        </canvas>
+
+    </div>
+
